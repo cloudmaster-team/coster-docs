@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>Общий принцип - Документация</title>
+<title>Яндекс Облако - Документация</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -45,7 +45,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Общий принцип
+              Яндекс Облако
             
           </span>
 </div>
@@ -173,14 +173,19 @@
           Подключение облаков
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../manage-connection/">
+        Общий принцип
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          Общий принцип
+          Яндекс Облако
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        Общий принцип
+        Яндекс Облако
       </a>
 <nav aria-label="Содержание раздела" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -190,21 +195,16 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
-    Общий принцип подключения и управления
+    Особенности подключения Яндекс Облака
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
-    Управление подключениями
+    Проверка успешности подключения
   </a>
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../connect-yandex/">
-        Яндекс Облако
-      </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../connect-openstack/">
@@ -261,34 +261,47 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="_1">Управление подключениями облаков</h1>
-<h2 id="_2">Общий принцип подключения и управления</h2>
-<p>Все операции с подключением осуществляются в меню <strong>Подключение к облакам</strong>. В правом верхнем углу кликните на <img alt="⚙" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2699.svg" title=":gear:">, выберите пункт <strong>Подключение к облакам</strong>.</img></p>
-<p>В открывшемся окне отображается список существующих подключений. Указана информация о <strong><em>дате создания</em></strong> подключения (общая информация), <strong><em>дате обновления</em></strong> информации по потреблению и <strong><em>валюте</em></strong> расчетов.</p>
-<p><img alt="Screenshot" src="../img/connections.png" width="600"/></p>
-<p>Валюта расчетов для Яндекс Облака, Azure и AWS определяется автоматически по данным биллинга.</p>
-<p>Для создания подключения кликните <strong>Новое подключение</strong>.</p>
-<h2 id="_3">Управление подключениями</h2>
-<p>Меню действий с подключением появляется при наведении курсора на карточку подключения — в виде иконки <span class="twemoji"><svg viewbox="0 0 128 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M64 360c30.9 0 56 25.1 56 56s-25.1 56-56 56-56-25.1-56-56 25.1-56 56-56zm0-160c30.9 0 56 25.1 56 56s-25.1 56-56 56-56-25.1-56-56 25.1-56 56-56zm56-104c0 30.9-25.1 56-56 56S8 126.9 8 96s25.1-56 56-56 56 25.1 56 56z"></path></svg></span>. Кликните, чтобы отобразить доступные опции: </p>
-<p><img alt="Screenshot" src="../img/connection-edit-menu.png" width="600"/></p>
+<h1 id="_1">Подключение Яндекс Облака</h1>
+<h2 id="_2">Особенности подключения Яндекс Облака</h2>
+<p>Функциональность управления Яндекс Облаком имеет следующие неизменяемые параметры:</p>
 <ul>
-<li><strong>Остановить</strong> — прекращает обращение системы к API облака. </li>
-<li><strong>Изменить</strong> — позволяет редактировать данные подключения. </li>
-<li><strong>Удалить подключение</strong> — удаляет данные доступа к облаку, а также все данные, собранные за время подключения к облаку. Действие относится только к данным в Cloudmaster.</li>
+<li>загрузочный диск можно удалить только вместе с машиной (отсоединить нельзя),</li>
+<li>нет функции создания контрольной точки для машины,</li>
+<li>набор образов ВМ зарегистрирован в продукте, его изменение через пользовательский интерфейс в данный момент недоступно. Образы: Ubuntu 22.04 LTS, CentOS 7, Debian 11.</li>
 </ul>
-<div class="admonition attention">
-<p class="admonition-title">Остановка сбора данных</p>
-<p>Остановка подключения <strong><em>НЕ</em></strong> ведет к изменениям в облаке. Все ресурсы продолжат работу в штатном режиме.</p>
-<p>После остановки подключения система перестанет собирать информацию об инфраструктуре.</p>
+<p>Для подключения Яндекс Облака требуются данные двух аккаунтов: пользователя Яндекс Облака и сервисного аккаунта. В текущей реализации необходимы настройки и данные обоих аккаунтов.</p>
+<details class="info">
+<summary>Определение прав для пользователя</summary>
+<p>Пользователь, от лица которого будет осуществлять действия система, должен обладать доступом к нужным облакам и каталогам (структурным единицам Яндекс Облака), а также иметь права, необходимые для инвентаризации машин, дисков и сервисов (для сопоставления с UUID в данных биллинга). </p>
+</details>
+<p>Нужно выбрать или создать пользователя Яндекс Облака, от лица которого платформа получит доступ к просмотру инфраструктуры, и создать OAuth-токен. Для этого необходимо залогиниться в Яндекс Облако под выбранным пользователем и следовать инструкции в <a href="https://cloud.yandex.ru/docs/iam/concepts/authorization/oauth-token">документации</a>. </p>
+<p><img alt="Screenshot" src="../img/oauth-token-yo.png" width="600"/></p>
+<div class="admonition info">
+<p class="admonition-title">Почему требуется информация по ценам и биллингу</p>
+<p>Подключение осуществляется обязательно для модуля Clouder и модуля Coster. Отсутствие данных для одного из модулей будет приводить к ошибкам. </p>
+<p>В связи с этим в меню подключений облаков будет необходимо задать данные для расчетов по затратам или получению их из облака, хотя эти данные используются модулем Coster.</p>
 </div>
-<p>После настройки подключения будет возможность его отредактировать и внести изменения.</p>
+<details class="info">
+<summary>Набор прав для сервисного аккаунта</summary>
+<p>Требуется предоставить доступ к бакету и папке, куда сохраняются биллинговые записи. Доступ к учету биллинга настраивается при помощи сервисного аккаунта. Проверьте, что у вас есть одна из ролей: <code>billing.accounts.owner</code>, <code>billing.accounts.admin</code>, <code>billing.accounts.editor</code>.</p>
+</details>
+<p><strong>Шаг 1:</strong> Создать бакет и папку, настроить сбор данных биллинга. При настройке выберите тип детализации <strong>Поресурсный</strong>.</p>
+<p>Ссылка на <a href="https://cloud.yandex.ru/docs/billing/operations/get-folder-report">Гайд по настройке от Яндекс Облака</a>. </p>
+<p><strong>Шаг 2:</strong> Создать <a href="https://cloud.yandex.ru/docs/iam/quickstart-sa">сервисный аккаунт</a>, предоставить данные к папке с биллингом и создать статический ключ (требуется идентификатор и значение). </p>
+<p>Ссылка на <a href="https://cloud.yandex.ru/docs/iam/concepts/authorization/access-key">Гайд по созданию статического ключа</a>.</p>
+<p>Все поля формы обязательны для заполнения.</p>
+<p><img alt="Screenshot" src="../img/connect-yandex.png" width="600"/></p>
+<h2 id="_3">Проверка успешности подключения</h2>
+<p>В течение 10 - 15 минут после подключения облака список виртуальных машин должен появиться в разделе <strong>Ресурсы</strong> -&gt; <strong>Виртуальные машины</strong>.</p>
+<p>Clouder также запросит существующие пользовательские (не системные) образы виртуальных машин и доступные сети. Образы и сети также должны будут появиться в соотвествующих разделах.</p>
+<p>Доступные в данный момент образы: Ubuntu 22.04 LTS, CentOS 7, Debian 11.</p>
 </article>
 </div>
 </div>
 </main>
 <footer class="md-footer">
 <nav aria-label="Нижний колонтитул" class="md-footer__inner md-grid">
-<a aria-label="Назад: Основные понятия" class="md-footer__link md-footer__link--prev" href="../reference/" rel="prev">
+<a aria-label="Назад: Общий принцип" class="md-footer__link md-footer__link--prev" href="../manage-connection/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -297,17 +310,17 @@
 <span class="md-footer__direction">
                 Назад
               </span>
-              Основные понятия
+              Общий принцип
             </div>
 </div>
 </a>
-<a aria-label="Вперед: Яндекс Облако" class="md-footer__link md-footer__link--next" href="../connect-yandex/" rel="next">
+<a aria-label="Вперед: OpenStack" class="md-footer__link md-footer__link--next" href="../connect-openstack/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Вперед
               </span>
-              Яндекс Облако
+              OpenStack
             </div>
 </div>
 <div class="md-footer__button md-icon">
